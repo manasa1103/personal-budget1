@@ -12,12 +12,13 @@ div.menu {
     background-color: #4d5791;
     height: 44px;
     padding: 0 40px;
+    text-align: center; /* Center align the header */
 }
 
 div.menu ul,
 div.menu ul li {
     margin: 0;
-    padding: 0 ;
+    padding: 0;
     list-style: none;
     display: inline-block;
 }
@@ -32,7 +33,7 @@ div.menu ul li a {
     margin: 0;
 }
 
-div.menu ul li a:hover  {
+div.menu ul li a:hover {
     background-color: white;
     color: #4d5791;
 }
@@ -40,7 +41,7 @@ div.menu ul li a:hover  {
 div.hero {
     height: 350px;
     background-color: #b4c6f0;
-    background-image: url('/bg.png');
+    background-image: url('/pb/bg.png');
     background-size: 400px;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -83,6 +84,7 @@ div.hero h2 {
     text-align: center;
 }
 
+/* Left-align articles */
 .container div.text-box {
     display: inline-block;
     width: 100%;
@@ -92,7 +94,8 @@ div.hero h2 {
 }
 
 @media screen and (min-width: 768px) {
-    .container .div.text-box {
+    /* Correct the selector to target text-box */
+    .container .text-box {
         margin: 10px;
     }
 }
