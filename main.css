@@ -85,7 +85,7 @@ body {
 }
 
 /* Left-align articles */
-.container div.text-box {
+.container .article {
     display: inline-block;
     width: 100%;
     max-width: 340px;
@@ -95,7 +95,7 @@ body {
 
 @media screen and (min-width: 768px) {
     /* Correct the selector to target text-box */
-    .container .text-box {
+    .container .article {
         margin: 10px;
     }
 }
