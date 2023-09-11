@@ -13,12 +13,12 @@
 <body>
     
     <!-- SEO Changes: replacing div tag with nav tag to indicate that this section has navigation links-->
-    <nav class="menu">
+    <!-- A11y Change: Added a landmark role to indicate the navigation region -->
+    <nav class="menu" role="navigation">
         <ul>
-            <li><a href="/">Homepage</a></li>
-            <!-- SEO Changes: More descriptive wording for links-->
+            <li><a href="/">Home</a></li>
             <!-- SEO Changes: More descriptive reference name for internal links-->
-            <li><a href="/pb/about-personal-budget-app.html">About personal budget application</a></li>
+            <li><a href="/pb/about-personal-budget-app.html">About</a></li>
             <li><a href="/pb/login.html">Login</a></li>
             <li><a href="https://google.com">Google</a></li>
         </ul>
@@ -26,85 +26,96 @@
 
     <!--SEO Change: Used Semantic HTML5 elements-->
     <!-- SEMANTIC CHANGE: using header instead of div for hero section-->
-    <header class="hero">
+    <!-- A11y Change: Used a descriptive aria-label for the hero section -->
+    <header class="hero" aria-label="Hero Section">
         <h1>Personal Budget</h1>
         <h2>A personal-budget management app</h2>
     </header>
 
+    <!-- SEMANTIC CHANGE: Using a main element to define the main content of the page -->
+    <main>
     <div class="container">
 
         <div class="page-area">
 
-            <!-- SEMANTIC CHANGE: replacing div with article tag -->
-            <article>
+            <!-- SEMANTIC CHANGE: replacing div with section tag -->
+            <section>
                 <h1>Stay on track</h1>
                 <p>
                     Do you know where you are spending your money? If you really stop to track it down,
                     you would get surprised! Proper budget management depends on real data... and this
                     app will help you with that!
                 </p>
-            </article>
+            </section>
     
-            <article>
+            <section>
                 <h1>Alerts</h1>
                 <p>
                     What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
                 </p>
-            </article>
+            </section>
     
-            <article>
+            <section>
                 <h1>Results</h1>
                 <p>
                     People who stick to a financial plan, budgeting every expense, get out of debt faster!
                     Also, they to live happier lives... since they expend without guilt or fear... 
                     because they know it is all good and accounted for.
                 </p>
-            </article>
+            </section>
     
-            <article>
+            <section>
                 <h1>Free</h1>
                 <p>
                     This app is free!!! And you are the only one holding your data!
                 </p>
-            </article>
+            </section>
     
-            <article>
+            <section>
                 <h1>Stay on track</h1>
                 <p>
                     Do you know where you are spending your money? If you really stop to track it down,
                     you would get surprised! Proper budget management depends on real data... and this
                     app will help you with that!
                 </p>
-            </article>
+            </section>
     
-            <article>
+            <section>
                 <h1>Alerts</h1>
                 <p>
                     What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
                 </p>
-            </article>
+            </section>
     
-            <article>
+            <section>
                 <h1>Results</h1>
                 <p>
                     People who stick to a financial plan, budgeting every expense, get out of debt faster!
                     Also, they to live happier lives... since they expend without guilt or fear... 
                     because they know it is all good and accounted for.
                 </p>
-            </article>
+            </section>
     
-            <article>
+            <section>
                 <h1>Free</h1>
                 <p>
                     This app is free!!! And you are the only one holding your data!
                 </p>
-            </article>
-
+            </section>
+                       
         </div>
-
     </div>
+    </main>
 
-    <!-- SEMANTIC CHANGE: changed div to footer tag-->
+    <!-- SEMANTIC CHANGE: Using an aside element to define content aside from the main content -->
+    <aside>
+        <h2>Other personal budget management sites:</h2>
+        <ul>
+        <li><a href="https://dfr.oregon.gov/financial/manage/pages/budget.aspx">Oregon.gov</a></li>
+        </ul>
+    </aside>
+
+    <!-- A11y CHANGE: changed div to footer tag-->
     <footer class="bottom">
         <div class="center">
             All rights reserved &copy; Manasa M
