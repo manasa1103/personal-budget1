@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Budget</title>
+    <!-- SEO Change 1: Added Meta tag description to give idea about what the page is about, keyword to give better search results-->
+    <meta name="description" content="Manage your personal budget with our free app. Stay on track, receive alerts, and achieve financial goals.">
+    <meta name="keywords" content="free app budget">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <!-- SEO Change 2: replacing div tag with nav tag to indicate that this section has navigation links-->
+    <!-- A11y Change 1: Added a landmark role to indicate the navigation region -->
+    <nav class="menu" role="navigation">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <!-- SEO Change 3: More descriptive reference name for internal links-->
+            <li><a href="about-personal-budget-app.html">About</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="https://google.com">Google</a></li>
+        </ul>
+    </nav>
+
+    <!--SEO Change 4: Used Semantic HTML5 elements-->
+    <!-- SEMANTIC CHANGE 1: using header instead of div for hero section-->
+    <!-- A11y Change 2: Used a descriptive aria-label for the hero section -->
+    <header class="hero" aria-label="Hero Section">
+        <h1>Personal Budget</h1>
+        <h2>A personal-budget management app</h2>
+    </header>
+
+    <!-- SEMANTIC CHANGE 2: Using a main element to define the main content of the page -->
+    <main>
+    <div class="container">
+
+        <div class="page-area">
+
+            <!-- SEMANTIC CHANGE 3: replacing div with section tag -->
+            <section>
+                <h1>Stay on track</h1>
+                <p>
+                    Do you know where you are spending your money? If you really stop to track it down,
+                    you would get surprised! Proper budget management depends on real data... and this
+                    app will help you with that!
+                </p>
+            </section>
+    
+            <section>
+                <h1>Alerts</h1>
+                <p>
+                    What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
+                </p>
+            </section>
+    
+            <section>
+                <h1>Results</h1>
+                <p>
+                    People who stick to a financial plan, budgeting every expense, get out of debt faster!
+                    Also, they to live happier lives... since they expend without guilt or fear... 
+                    because they know it is all good and accounted for.
+                </p>
+            </section>
+    
+            <section>
+                <h1>Free</h1>
+                <p>
+                    This app is free!!! And you are the only one holding your data!
+                </p>
+            </section>
+    
+            <section>
+                <h1>Stay on track</h1>
+                <p>
+                    Do you know where you are spending your money? If you really stop to track it down,
+                    you would get surprised! Proper budget management depends on real data... and this
+                    app will help you with that!
+                </p>
+            </section>
+    
+            <section>
+                <h1>Alerts</h1>
+                <p>
+                    What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
+                </p>
+            </section>
+    
+            <section>
+                <h1>Results</h1>
+                <p>
+                    People who stick to a financial plan, budgeting every expense, get out of debt faster!
+                    Also, they to live happier lives... since they expend without guilt or fear... 
+                    because they know it is all good and accounted for.
+                </p>
+            </section>
+    
+            <section>
+                <h1>Chart</h1>
+                <p>
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </p>
+            </section>
+                       
+        </div>
+    </div>
+    </main>
+
+    <!-- SEMANTIC CHANGE 4: Using an aside element to define content aside from the main content -->
+    <aside>
+        <h3>Other personal budget management sites:</h3>
+        <ul>
+        <li><a href="https://dfr.oregon.gov/financial/manage/pages/budget.aspx">Oregon.gov</a></li>
+        </ul>
+    </aside>
+
+    <!-- A11y CHANGE 3: changed div to footer tag-->
+    <footer class="bottom">
+        <div class="center">
+            All rights reserved &copy; Manasa M
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js" integrity="sha512-G8JE1Xbr0egZE5gNGyUm1fF764iHVfRXshIoUWCTPAbKkkItp/6qal5YAHXrxEu4HNfPTQs6HOu3D5vCGS1j3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var dataSource={
+            datasets: [
+                {
+                    data: [30,350,90],
+                    backgroundColor: [
+                        '#ffcd56',
+                        '#ff6384',
+                        '#36a2eb',
+                        '#fd6b19',
+                    ],
+                }
+            ],
+            labels: [
+                'Eat out',
+                'Rent',
+                'Groceries'
+            ]
+        };
+
+        function createChart() {
+            var ctx = document.getElementById("myChart").getContext("2d");
+            var myPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: dataSource
+            });
+        }
+
+        function getBudget() {
+            axios.get('/budget')
+            .then(function (res) {
+                console.log(res.data);
+                for (var i=0; i< res.data.myBudget.length; i++) {
+                    dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
+                    dataSource.labels[i] = res.data.myBudget[i].title;
+                }
+                createChart();
+            });
+        }
+        getBudget();
+</script>
+</body>
+</html>
