@@ -1,0 +1,38 @@
+{
+    "myBudget": [
+    {
+        "title": "Shopping",
+        "budget": 140
+    },
+    {
+        "title": "Water Bills",
+        "budget": 200
+    },
+
+    {
+        "title": "Groceries",
+        "budget": 400
+    },
+    {
+        "title": "HealthCare",
+        "budget": 100
+    },
+    {
+        "title": "Gifts",
+        "budget": 200
+    },
+    {
+        "title": "Trips",
+        "budget": 200
+    },
+    {
+        "title": "Education",
+        "budget": 100
+    },
+    {
+        "title": "Miscellaneous",
+        "budget": 150
+    }
+    
+]
+}

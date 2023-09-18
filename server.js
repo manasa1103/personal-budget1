@@ -1,6 +1,6 @@
 const express = require('express');
 const app=express();
-const port=5500;
+const port=3000;
 
 app.use('/', express.static('public'));
 
@@ -25,8 +25,8 @@ app.get('/hello', (req, res) => {
     res.send('Hello World!');
 });
 
-app.get('/budget', (req, res) => {
-    res.json(budget);
+app.use('/budget', (req, res) => {
+    res.sendFile('C:\Users\prady\dev\personal-budget1\server.json');
 });
 
 app.listen(port, () => {
