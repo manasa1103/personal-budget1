@@ -121,7 +121,8 @@
             </section>
                    
             <section class="text-box">
-                <h1 tabindex="26">D3JS Donut Chart</h1>
+                <h1 tabindex="26
+                ">D3JS Donut Chart</h1>
                 <p tabindex="27">
                 <div id="d3DonutChart"></div>
                 </p>
@@ -194,28 +195,20 @@
             axios.get('/budget')
             .then(function(res) {
                 console.log(res.data);
-                for (var i=0;i<res.data.myBudget.length; i++)
-                {
+                for (var i=0;i<res.data.myBudget.length; i++){
                     dataSource.datasets[0].data[i]=res.data.myBudget[i].budget;
                     dataSource.labels[i]=res.data.myBudget[i].title;
-                } 
-            })
+                }})
                 .then(function () {
                 createChart();
             });
         }
         getBudget();
-        
-    
-    
+           
     </script>
-
 <script>
-
     console.log("D3JS file linked properly");
     var datum = [];
-
-
     function getBudgetAgain() {
         axios.get('http://localhost:3000/budget')
             .then(function (res) {
